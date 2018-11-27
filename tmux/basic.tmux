@@ -1,0 +1,1 @@
+/home/oke/.tmux.conf
