@@ -17,6 +17,7 @@ if [ ! -e $CONFIG_DIR/nvim ]; then
 fi
 ln -s $DOTFILES_HOME/zsh/basic.zsh $HOME/.zshrc
 ln -s $DOTFILES_HOME/tmux/basic.tmux $HOME/.tmux.conf
+ln -s $DOTFILES_HOME/git/gitconfig $HOME/.gitconfig
 
 # load zshrc
 source $HOME/.zshrc
