@@ -13,10 +13,6 @@ zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}
 # vi mode
 bindkey -v
 
-# For direnv
-export EDITOR=zsh
-eval "$(direnv hook zsh)"
-
 # For Powerline zsh
 export GOPATH=$CONFIG_DIR/go
 function powerline_precmd() {
@@ -39,3 +35,7 @@ fi
 alias vim=nvim
 
 alias nvimrc='vim $HOME/.config/nvim/init.vim'
+
+# For direnv
+export EDITOR=vim
+eval "$(direnv hook zsh)"
