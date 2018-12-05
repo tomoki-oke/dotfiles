@@ -11,3 +11,4 @@ Mac or Linux
 2. install.shを実行
     - brew/requirements.txtにあるパッケージをインストール
     - dotfilesにシンボリックリンク貼ってホームディレクトリ下に配置
+3. chshでzshに切り替えが必要かも

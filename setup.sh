@@ -1,6 +1,7 @@
 #!/bin/sh
 DOTROOT=`pwd`
 
+# check OS
 if [ "$(uname)" = 'Darwin' ]; then
     OS="Mac"
 else
@@ -10,7 +11,9 @@ fi
 if type brew > /dev/null 2>&1; then
     echo 'brew is installed.'
 else
+    # install brew command
     if [ $OS = "Mac" ]; then
+        # install homebrew
         /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     else
         # install linuxbrew
@@ -23,8 +26,11 @@ else
 fi
 brew update
 
+# install requirements
 cat $DOTROOT/brew/requirements.txt | while read package
 do
     brew install $package
 done
+
+# chenge shell
 export SHELL=`which zsh`
