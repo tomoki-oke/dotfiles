@@ -11,6 +11,10 @@ fi
 export GOPATH=$CONFIG_DIR/go
 go get -u github.com/justjanne/powerline-go
 
+# install latest python using pyenv
+pyenv install 2.7.15
+pyenv install 3.7.1
+
 # layout dotfiles
 if [ ! -e $CONFIG_DIR/nvim ]; then
     ln -s $DOTFILES_HOME/nvim $CONFIG_DIR/nvim

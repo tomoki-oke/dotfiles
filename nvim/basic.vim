@@ -13,7 +13,7 @@ if has("autocmd")
 endif
 
 " venv用のpython path
-let g:python_host_prog = '/home/oke/neovim/neovim-python2/.direnv/python-2.7.15/bin/python'
-let g:python3_host_prog = '/home/oke/neovim/neovim-python3/.direnv/python-3.5.2/bin/python'
+let g:python_host_prog = expand('%:p:h') . '/python/python2/.direnv/python-2.7.15/bin/python2.7'
+let g:python3_host_prog = expand('%:p:h') . '/python/python3/.direnv/python-3.7.1/bin/python3.7'
 
 nmap <Esc><Esc> :nohlsearch<CR><Esc>

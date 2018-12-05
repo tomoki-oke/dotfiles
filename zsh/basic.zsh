@@ -44,5 +44,5 @@ alias vim=nvim
 alias nvimrc='vim $HOME/.config/nvim/init.vim'
 
 # For direnv
-export EDITOR=vim
+export EDITOR=nvim
 eval "$(direnv hook zsh)"
