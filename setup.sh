@@ -1,16 +1,16 @@
 #!/bin/sh
 DOTROOT=`pwd`
 
-if [ "$(uname)" == 'Darwin' ]; then
-    OS='Mac'
+if [ "$(uname)" = 'Darwin' ]; then
+    OS="Mac"
 else
-    OS='Linux'
+    OS="Linux"
 fi
 
 if type brew > /dev/null 2>&1; then
     echo 'brew is installed.'
 else
-    if [ $OS=='Mac' ]; then
+    if [ $OS = "Mac" ]; then
         /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     else
         # install linuxbrew

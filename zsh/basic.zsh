@@ -1,5 +1,12 @@
 # Created by newuser for 5.1.1
 
+if [ -z "$XDG_CONFIG_HOME"]; then
+    CONFIG_DIR=$HOME/.config
+else
+    CONFIG_DIR=$XDG_CONFIG_HOME
+fi
+
+
 path=(
     $HOME/.local/bin(N-/)
     $path

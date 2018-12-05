@@ -3,3 +3,4 @@ nvim
 zsh
 golang
 pyenv
+direnv

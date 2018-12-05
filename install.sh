@@ -1,5 +1,6 @@
 #!/bin/zsh
 DOTFILES_HOME=`pwd`
+
 if [ -z "$XDG_CONFIG_HOME"]; then
     CONFIG_DIR=$HOME/.config
 else
