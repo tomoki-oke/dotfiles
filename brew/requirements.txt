@@ -1,0 +1,5 @@
+git
+nvim
+zsh
+golang
+pyenv

@@ -6,15 +6,35 @@ path=(
 )
 
 # completion
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+autoload -U compinit
+compinit
+zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}'
+
+# vi mode
+bindkey -v
 
 # For direnv
 export EDITOR=zsh
 eval "$(direnv hook zsh)"
 
 # For Powerline zsh
-powerline-daemon -q
-. $HOME/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+export GOPATH=$CONFIG_DIR/go
+function powerline_precmd() {
+    PS1="$($GOPATH/bin/powerline-go -error $? -shell zsh)"
+}
+
+function install_powerline_precmd() {
+  for s in "${precmd_functions[@]}"; do
+    if [ "$s" = "powerline_precmd" ]; then
+      return
+    fi
+  done
+  precmd_functions+=(powerline_precmd)
+}
+
+if [ "$TERM" != "linux" ]; then
+    install_powerline_precmd
+fi
 
 alias vim=nvim
 
